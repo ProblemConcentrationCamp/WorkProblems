@@ -1,6 +1,6 @@
-###一. Maven的一些特性
+###一. Maven的一些特性 ###
 
-####1.maven的dependencies与dependencyManagement的区别
+####1.maven的dependencies与dependencyManagement的区别 ####
 父pom中，<dependencies>的依赖，子pom都会被动继承。且是依赖的引入。
 父pom中，<dependencyManagement> 只是做依赖的声明，并不会做真正的引入。
 当子pom中的<dependencies>引入了父pom的<dependencyManagement>中有的依赖，
@@ -9,13 +9,13 @@
 所以父pom的<dependencyManagement>只是用来管理子pom中依赖的版本号。
 至于子类则可以主动选择是否继承，并且使用规定的版本号。
 
-####2.maven的仓库
+####2.maven的仓库 ####
 本地仓库、中央仓库、远程仓库。
 maven寻找顺序：本地仓库 =》中央仓库 =》远程仓库。
 有时，应用需要用到比较新的依赖，而这些依赖并没有正式发布，还是处于milestone或者是snapshot阶段，
 并不能从中央仓库下载。这时需要从远程仓库下载。
 
-####3.maven 有做避免依赖冲突的策略
+####3.maven 有做避免依赖冲突的策略 ####
 短路优先:
 两个直接引用的jar包，都引用了共同jar包。
 A-B-Z
@@ -28,10 +28,10 @@ C-Z
 虽然maven有做避免冲突，为什么还会发生冲突？因为maven避免的是同一个依赖的同一版本冲突，
 如果同一个依赖，有两个版本存在，maven就不知道如何进行选择，就会报依赖冲突。
 
-####4.依赖冲突时，可以进行依赖排除。
+####4.依赖冲突时，可以进行依赖排除。 ####
 
 
-###二 场景1：
+###二 场景1： ###
 在一些特殊情况下（例如去给客户演示项目，客户那边只有内网），maven不能从远程仓库下载依赖的jar包，也访问不了镜像仓库，
 这个时候就需要在无网络的情况下运行项目。
 
