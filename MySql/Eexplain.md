@@ -10,7 +10,7 @@
 
 * select_type
 
-表示select查询的类型。主要用于区分各种复杂的查询。
+从查询的复杂度来区分查询的类型。
 
   1. SIMPLE：表示最简单的select查询语句。也就是在查询中不包含子查询或union等并集差集操作。
   2. PRIMARY: 当查询语句包含任何复杂的子部分，则最外层的查询标记为PRIMARY。
@@ -26,7 +26,8 @@
 
 * type
 
-查询的类型。SQL优化的一个重要指标。性能从好到坏是
+从查询的性能来区分查询的类型。SQL优化的一个重要指标。性能从好到坏是
+
 system > const > eq_ref > ref > ref_or_null > index_merge > unqiue_subquery > 
 index_subquery > range > index > ALL
    1. system: 当表中仅有一行记录时（系统表），数据量很少，不需要磁盘IO。
